@@ -109,6 +109,12 @@ public class GameController
 		SwinGame.RefreshScreen();
 	}
 
+    /// <summary>
+    /// Defines instructions for player finding a ship
+    /// </summary>
+    /// <param name="row">Define row player selected</param>
+    /// <param name="column">Define column player selected</param>
+    /// <param name="showAnimation">Define if the animation should be shown or not (true or false)</param>
 	private void PlayHitSequence(int row, int column, bool showAnimation)
 	{
 		if (showAnimation) {
@@ -120,6 +126,12 @@ public class GameController
 		DrawAnimationSequence();
 	}
 
+    /// <summary>
+    /// Defines instructions if player does not find ship
+    /// </summary>
+    /// <param name="row">Define row player selected</param>
+    /// <param name="column">Define column player selected</param>
+    /// <param name="showAnimation">Define if the animation should be shown or not (true or false)</param>
 	private void PlayMissSequence(int row, int column, bool showAnimation)
 	{
 		if (showAnimation) {
