@@ -3,7 +3,9 @@ using System.Collections.Generic;
 
 public class GameResources
 {
-
+    /// <summary>
+    /// Load fonts required for text/titles in the game
+    /// </summary>
 	private void LoadFonts()
 	{
 		NewFont("ArialLarge", "arial.ttf", 80);
@@ -12,6 +14,9 @@ public class GameResources
 		NewFont("Menu", "ffaccess.ttf", 8);
 	}
 
+    /// <summary>
+    /// Load images required for the game
+    /// </summary>
 	private void LoadImages()
 	{
 		//Backgrounds
@@ -39,6 +44,9 @@ public class GameResources
 
 	}
 
+    /// <summary>
+    /// Load sounds required for the game
+    /// </summary>
 	private void LoadSounds()
 	{
 		NewSound("Error", "error.wav");
@@ -50,6 +58,9 @@ public class GameResources
 		NewSound("Lose", "lose.wav");
 	}
 
+    /// <summary>
+    /// Music required for the game
+    /// </summary>
 	private void LoadMusic()
 	{
 		NewMusic("Background", "horrordrone.mp3");
@@ -150,6 +161,9 @@ public class GameResources
 		EndLoadingScreen(width, height);
 	}
 
+    /// <summary>
+    /// Create loading screen
+    /// </summary>
 	private void ShowLoadingScreen()
 	{
 		_Background = SwinGame.LoadBitmap(SwinGame.PathToResource("SplashBack.png", ResourceKind.BitmapResource));
@@ -167,6 +181,9 @@ public class GameResources
 		PlaySwinGameIntro();
 	}
 
+    /// <summary>
+    /// Insert sound for Game introduction / opening screen 
+    /// </summary>
 	private void PlaySwinGameIntro()
 	{
 		const int ANI_CELL_COUNT = 11;
@@ -186,6 +203,11 @@ public class GameResources
 
 	}
 
+    /// <summary>
+    /// Display a message in the game
+    /// </summary>
+    /// <param name="message">Message to print</param>
+    /// <param name="number">Integer used for bitmap full width (fullW) calculation</param>
 	private void ShowMessage(string message, int number)
 	{
 		const int TX = 310;
@@ -215,6 +237,11 @@ public class GameResources
 		SwinGame.ProcessEvents();
 	}
 
+    /// <summary>
+    /// Inidcate all the things have been loaded into the game
+    /// </summary>
+    /// <param name="width">width for new screen size</param>
+    /// <param name="height">Height for new screen size</param>
 	private void EndLoadingScreen(int width, int height)
 	{
 		SwinGame.ProcessEvents();
@@ -230,36 +257,72 @@ public class GameResources
 		SwinGame.ChangeScreenSize(width, height);
 	}
 
+    /// <summary>
+    /// Use to add new fonts
+    /// </summary>
+    /// <param name="fontName">Define font name</param>
+    /// <param name="filename">define filename for font</param>
+    /// <param name="size">define size required for font</param>
 	private void NewFont(string fontName, string filename, int size)
 	{
 		_Fonts.Add(fontName, SwinGame.LoadFont(SwinGame.PathToResource(filename, ResourceKind.FontResource), size));
 	}
 
+    /// <summary>
+    /// Use to add new image
+    /// </summary>
+    /// <param name="imageName">Define image name</param>
+    /// <param name="filename">Define filename for image</param>
 	private void NewImage(string imageName, string filename)
 	{
 		_Images.Add(imageName, SwinGame.LoadBitmap(SwinGame.PathToResource(filename, ResourceKind.BitmapResource)));
 	}
 
+    /// <summary>
+    /// Add transparent color image
+    /// </summary>
+    /// <param name="imageName">Define image name</param>
+    /// <param name="fileName">define filename for image</param>
+    /// <param name="transColor">define a color</param>
 	private void NewTransparentColorImage(string imageName, string fileName, Color transColor)
 	{
 		_Images.Add(imageName, SwinGame.LoadBitmap(SwinGame.PathToResource(fileName, ResourceKind.BitmapResource)));
 	}
 
+    /// <summary>
+    /// Use to add transparent color image
+    /// </summary>
+    /// <param name="imageName">Define image name</param>
+    /// <param name="fileName">define filename for image</param>
+    /// <param name="transColor">define a color</param>
 	private void NewTransparentColourImage(string imageName, string fileName, Color transColor)
 	{
 		NewTransparentColorImage(imageName, fileName, transColor);
 	}
 
+    /// <summary>
+    /// Use to add a new sound
+    /// </summary>
+    /// <param name="soundName">define name of sound</param>
+    /// <param name="filename">define filename for sound</param>
 	private void NewSound(string soundName, string filename)
 	{
 		_Sounds.Add(soundName, Audio.LoadSoundEffect(SwinGame.PathToResource(filename, ResourceKind.SoundResource)));
 	}
 
+    /// <summary>
+    /// Use to add new music
+    /// </summary>
+    /// <param name="musicName">Define name of music</param>
+    /// <param name="filename">Define filename for music</param>
 	private void NewMusic(string musicName, string filename)
 	{
 		_Music.Add(musicName, Audio.LoadMusic(SwinGame.PathToResource(filename, ResourceKind.SoundResource)));
 	}
 
+    /// <summary>
+    /// Free out the fonts
+    /// </summary>
 	private void FreeFonts()
 	{
 		Font obj;
@@ -268,6 +331,9 @@ public class GameResources
 		}
 	}
 
+    /// <summary>
+    /// Free out the images
+    /// </summary>
 	private void FreeImages()
 	{
 		Bitmap obj;
@@ -276,6 +342,9 @@ public class GameResources
 		}
 	}
 
+    /// <summary>
+    /// Free out the sounds
+    /// </summary>
 	private void FreeSounds()
 	{
 		SoundEffect obj;
@@ -284,6 +353,9 @@ public class GameResources
 		}
 	}
 
+    /// <summary>
+    /// Free out the music
+    /// </summary>
 	private void FreeMusic()
 	{
 		Music obj;
@@ -292,6 +364,9 @@ public class GameResources
 		}
 	}
 
+    /// <summary>
+    /// Free out the resources
+    /// </summary>
 	public void FreeResources()
 	{
 		FreeFonts();
