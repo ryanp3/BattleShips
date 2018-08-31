@@ -262,32 +262,36 @@ public class GameResources
 
 	private void FreeFonts()
 	{
-		Font obj;
-		foreach ( obj in _Fonts.Values) {
+		/*
+         *the change that i made is i commented Font obj and added Font in the for each loop*/ 
+         //Font obj;
+		foreach ( Font obj in _Fonts.Values) {
 			SwinGame.FreeFont(obj);
 		}
 	}
 
 	private void FreeImages()
 	{
-		Bitmap obj;
-		foreach ( obj in _Images.Values) {
+		/*
+         * Same change as previous one*/
+        //Bitmap obj;
+		foreach (Bitmap obj in _Images.Values) {
 			SwinGame.FreeBitmap(obj);
 		}
 	}
 
 	private void FreeSounds()
 	{
-		SoundEffect obj;
-		foreach ( obj in _Sounds.Values) {
+		//SoundEffect obj;
+		foreach (SoundEffect obj in _Sounds.Values) {
 			Audio.FreeSoundEffect(obj);
 		}
 	}
 
 	private void FreeMusic()
 	{
-		Music obj;
-		foreach ( obj in _Music.Values) {
+		//Music obj;
+		foreach (Music obj in _Music.Values) {
 			Audio.FreeMusic(obj);
 		}
 	}
