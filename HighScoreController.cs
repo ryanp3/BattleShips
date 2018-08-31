@@ -45,7 +45,7 @@ namespace MyGame
         }
 
 
-        private List<Score> _Scores = new List<Score>();
+        private System.Collections.Generic.List<Score> _Scores = new List<Score>();
         /// <summary>
         /// Loads the scores from the highscores text file.
         /// </summary>
