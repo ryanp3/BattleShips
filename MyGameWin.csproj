@@ -46,6 +46,23 @@
     <Compile Include="GameState.cs" />
     <Compile Include="HighScoreController.cs" />
     <Compile Include="MenuController.cs" />
+    <Compile Include="Resources\Model\AIHardPlayer.cs" />
+    <Compile Include="Resources\Model\AIMediumPlayer.cs" />
+    <Compile Include="Resources\Model\AIOption.cs" />
+    <Compile Include="Resources\Model\AIPlayer.cs" />
+    <Compile Include="Resources\Model\AttackResult.cs" />
+    <Compile Include="Resources\Model\BattleShipsGame.cs" />
+    <Compile Include="Resources\Model\Direction.cs" />
+    <Compile Include="Resources\Model\ISeaGrid.cs" />
+    <Compile Include="Resources\Model\Player.cs" />
+    <Compile Include="Resources\Model\ResultOfAttack.cs" />
+    <Compile Include="Resources\Model\SeaGrid.cs" />
+    <Compile Include="Resources\Model\SeaGridAdapter.cs" />
+    <Compile Include="Resources\Model\Ship.cs" />
+    <Compile Include="Resources\Model\ShipName.cs" />
+    <Compile Include="Resources\Model\Target.cs" />
+    <Compile Include="Resources\Model\Tile.cs" />
+    <Compile Include="Resources\Model\TileView.cs" />
     <Compile Include="UtilityFunctions.cs" />
   </ItemGroup>
   <ItemGroup>
