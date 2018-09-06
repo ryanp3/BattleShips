@@ -18,21 +18,30 @@ namespace MyGame {
         private const int _WIDTH = 10;
 
         private const int _HEIGHT = 10;
-        private Tile[,] _GameTiles = new Tile[Width - 1, Height - 1];
+        private Tile[,] _GameTiles = new Tile[_WIDTH - 1, _HEIGHT - 1];
         private Dictionary<ShipName, Ship> _Ships;
 
         private int _ShipsKilled = 0;
         /// <summary>
         /// The sea grid has changed and should be redrawn.
         /// </summary>
-        public event EventHandler ISeaGrid.Changed;
+        public event EventHandler Changed
+        {add
+            {
+
+            }
+            remove
+            {
+
+            }
+        }
 
 	/// <summary>
 	/// The width of the sea grid.
 	/// </summary>
 	/// <value>The width of the sea grid.</value>
 	/// <returns>The width of the sea grid.</returns>
-	public int ISeaGrid.Width {
+	public int Width {
             get { return _WIDTH; }
         }
 
@@ -41,7 +50,7 @@ namespace MyGame {
         /// </summary>
         /// <value>The height of the sea grid</value>
         /// <returns>The height of the sea grid</returns>
-        public int ISeaGrid.Height {
+        public int Height {
             get { return _HEIGHT; }
         }
 
@@ -58,7 +67,7 @@ namespace MyGame {
         /// <param name="x">x coordinate of the tile</param>
         /// <param name="y">y coordiante of the tile</param>
         /// <returns></returns>
-        public TileView ISeaGrid.Item {
+        public TileView Item {
             get { return _GameTiles(x, y).View; }
         }
 
@@ -164,7 +173,7 @@ namespace MyGame {
         /// <param name="row">the row at which is being shot</param>
         /// <param name="col">the cloumn at which is being shot</param>
         /// <returns>An attackresult (hit, miss, sunk, shotalready)</returns>
-        public AttackResult ISeaGrid.HitTile(int row, int col)
+        public AttackResult HitTile(int row, int col)
         {
             try {
                 //tile is already hit

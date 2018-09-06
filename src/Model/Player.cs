@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using SwinGameSDK;
 using static SwinGameSDK.SwinGame;
@@ -152,7 +153,7 @@ namespace MyGame
         /// has.
         /// </summary>
         /// <returns>A Ship enumerator</returns>
-        public IEnumerator<Ship> IEnumerable<Ship>.GetShipEnumerator()
+        public IEnumerator<Ship> GetShipEnumerator()
         {
             Ship[] result = new Ship[_Ships.Values.Count];
             _Ships.Values.CopyTo(result, 0);
@@ -167,7 +168,7 @@ namespace MyGame
         /// has.
         /// </summary>
         /// <returns>A Ship enumerator</returns>
-        public IEnumerator IEnumerable.GetEnumerator()
+        public IEnumerator GetEnumerator()
         {
             Ship[] result = new Ship[_Ships.Values.Count];
             _Ships.Values.CopyTo(result, 0);
@@ -253,6 +254,16 @@ namespace MyGame
                     }
                 } while (!placementSuccessful);
             }
+        }
+
+        IEnumerator<Ship> IEnumerable<Ship>.GetEnumerator()
+        {
+            throw new NotImplementedException();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            throw new NotImplementedException();
         }
     }
 }
