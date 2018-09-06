@@ -12,10 +12,10 @@ namespace MyGame
 {
     public class Player : IEnumerable<Ship>
     {
-
+        //= new SeaGrid(_Ships);
         protected static Random _Random = new Random();
         private Dictionary<ShipName, Ship> _Ships = new Dictionary<ShipName, Ship>();
-        private SeaGrid _playerGrid = new SeaGrid(_Ships);
+        private SeaGrid _playerGrid;
         private ISeaGrid _enemyGrid;
 
         protected BattleShipsGame _game;
@@ -97,17 +97,22 @@ namespace MyGame
         /// <value>The ship</value>
         /// <returns>The ship with the indicated name</returns>
         /// <remarks>The none ship returns nothing/null</remarks>
-        public Ship Ship
+       /* needs to be converted to a method
+        * public Ship Ship
         {
             get
             {
-                if (name == ShipName.None)
+                foreach(Ship s in _Ships)
+                {
+                    if (_Ships.)
+                }
+                    (_Ships[ShipName.] == ShipName.None)
                     return null;
 
-                return _Ships.Item(name);
-            }
+                return _Ships[key: ShipName];
+                    }
         }
-
+        */
         /// <summary>
         /// The number of shots the player has made
         /// </summary>
@@ -204,8 +209,10 @@ namespace MyGame
                 case ResultOfAttack.Destroyed:
                 case ResultOfAttack.Hit:
                     _hits += 1;
+                    break;
                 case ResultOfAttack.Miss:
                     _misses += 1;
+                    break;
             }
 
             return result;

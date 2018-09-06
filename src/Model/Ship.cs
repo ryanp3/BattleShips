@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using SwinGameSDK;
 using static SwinGameSDK.SwinGame;
 
@@ -37,6 +38,14 @@ namespace MyGame
                 }
 
                 return _shipName.ToString();
+            }
+        }
+
+        public ShipName ShipType
+        {
+            get
+            {
+                return _shipName;
             }
         }
 
@@ -87,7 +96,7 @@ namespace MyGame
             _tiles = new List<Tile>();
 
             //gets the ship size from the enumarator
-            _sizeOfShip = _shipName;
+            _sizeOfShip = (int)_shipName;
         }
 
         /// <summary>
