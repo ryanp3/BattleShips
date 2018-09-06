@@ -1,6 +1,7 @@
 using SwinGameSDK;
 using static SwinGameSDK.SwinGame;
 using System;
+using System.Collections.Generic;
 
 /// <summary>
 /// The GameController is responsible for controlling the game,
@@ -79,10 +80,13 @@ namespace MyGame
             {
                 case AIOption.Medium:
                     _ai = new AIMediumPlayer(_theGame);
+                    break;
                 case AIOption.Hard:
                     _ai = new AIHardPlayer(_theGame);
+                    break;
                 default:
                     _ai = new AIHardPlayer(_theGame);
+                    break;
             }
 
             _human = new Player(_theGame);

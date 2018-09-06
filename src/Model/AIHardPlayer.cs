@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using SwinGameSDK;
 using static SwinGameSDK.SwinGame;
 
@@ -118,10 +119,12 @@ namespace MyGame
                 switch (_CurrentState)
                 {
                     case AIStates.Searching:
-                        SearchCoords(row, column);
+                        SearchCoords(ref row, ref column);
+                        break;
                     case AIStates.TargetingShip:
                     case AIStates.HittingShip:
-                        TargetCoords(row, column);
+                        TargetCoords(ref row, ref column);
+                        break;
                     default:
                         throw new ApplicationException("AI has gone in an invalid state");
                 }
