@@ -171,8 +171,8 @@ namespace MyGame
             {
                 case ResultOfAttack.Destroyed:
                     PlayHitSequence(result.Row, result.Column, isHuman);
-
                     Audio.PlaySoundEffect(GameSound("Sink"));
+                    break;
                 case ResultOfAttack.GameOver:
                     PlayHitSequence(result.Row, result.Column, isHuman);
                     Audio.PlaySoundEffect(GameSound("Sink"));
@@ -192,12 +192,16 @@ namespace MyGame
                         Audio.PlaySoundEffect(GameSound("Winner"));
 
                     }
+                    break;
                 case ResultOfAttack.Hit:
                     PlayHitSequence(result.Row, result.Column, isHuman);
+                    break;
                 case ResultOfAttack.Miss:
                     PlayMissSequence(result.Row, result.Column, isHuman);
+                    break;
                 case ResultOfAttack.ShotAlready:
                     Audio.PlaySoundEffect(GameSound("Error"));
+                    break;
             }
         }
 
@@ -261,8 +265,10 @@ namespace MyGame
                 case ResultOfAttack.Miss:
                     if (object.ReferenceEquals(_theGame.Player, ComputerPlayer))
                         AIAttack();
+                    break;
                 case ResultOfAttack.GameOver:
                     SwitchState(GameState.EndingGame);
+                    break;
             }
         }
 
@@ -283,18 +289,25 @@ namespace MyGame
             {
                 case GameState.ViewingMainMenu:
                     HandleMainMenuInput();
+                    break;
                 case GameState.ViewingGameMenu:
                     HandleGameMenuInput();
+                    break;
                 case GameState.AlteringSettings:
                     HandleSetupMenuInput();
+                    break;
                 case GameState.Deploying:
                     HandleDeploymentInput();
+                    break;
                 case GameState.Discovering:
                     HandleDiscoveryInput();
+                    break;
                 case GameState.EndingGame:
                     HandleEndOfGameInput();
+                    break;
                 case GameState.ViewingHighScores:
                     HandleHighScoreInput();
+                    break;
             }
 
             UpdateAnimations();
@@ -314,18 +327,25 @@ namespace MyGame
             {
                 case GameState.ViewingMainMenu:
                     DrawMainMenu();
+                    break;
                 case GameState.ViewingGameMenu:
                     DrawGameMenu();
+                    break;
                 case GameState.AlteringSettings:
                     DrawSettings();
+                    break;
                 case GameState.Deploying:
                     DrawDeployment();
+                    break;
                 case GameState.Discovering:
                     DrawDiscovery();
+                    break;
                 case GameState.EndingGame:
                     DrawEndOfGame();
+                    break;
                 case GameState.ViewingHighScores:
                     DrawHighScores();
+                    break;
             }
 
             DrawAnimations();

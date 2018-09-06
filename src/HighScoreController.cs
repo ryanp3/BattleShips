@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using SwinGameSDK;
 using static SwinGameSDK.SwinGame;
@@ -30,7 +31,7 @@ namespace MyGame
             /// </summary>
             /// <param name="obj">the object to compare to</param>
             /// <returns>a value that indicates the sort order</returns>
-            public int System.IComparable.CompareTo(object obj)
+             int System.IComparable.CompareTo(object obj)
             {
                 if (obj is Score)
                 {
@@ -135,7 +136,7 @@ namespace MyGame
             {
                 Score s;
 
-                s = _Scores.Item(i);
+                s = _Scores[i];
 
                 //for scores 1 - 9 use 01 - 09
                 if (i < 9)
@@ -155,7 +156,7 @@ namespace MyGame
         /// <remarks></remarks>
         public void HandleHighScoreInput()
         {
-            if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.VK_ESCAPE) || SwinGame.KeyTyped(KeyCode.VK_RETURN))
+            if (SwinGame.MouseClicked(MouseButton.LeftButton) || SwinGame.KeyTyped(KeyCode.EscapeKey) || SwinGame.KeyTyped(KeyCode.ReturnKey))
             {
                 EndCurrentState();
             }
@@ -176,7 +177,7 @@ namespace MyGame
                 LoadScores();
 
             //is it a high score
-            if (value > _Scores.Item(_Scores.Count - 1).Value)
+            if (value > _Scores[_Scores.Count - 1].Value)
             {
                 Score s = new Score();
                 s.Value = value;
@@ -203,7 +204,7 @@ namespace MyGame
 
                 if (s.Name.Length < 3)
                 {
-                    s.Name = s.Name + new string((char)" ", 3 - s.Name.Length);
+                    s.Name = s.Name + " " + (3 - s.Name.Length);
                 }
 
                 _Scores.RemoveAt(_Scores.Count - 1);

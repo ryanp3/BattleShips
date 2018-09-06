@@ -47,9 +47,11 @@ namespace MyGame
                 switch (_CurrentState)
                 {
                     case AIStates.Searching:
-                        SearchCoords(row, column);
+                        SearchCoords(ref row, ref column);
+                        break;
                     case AIStates.TargetingShip:
-                        TargetCoords(row, column);
+                        TargetCoords(ref row, ref column);
+                        break;
                     default:
                         throw new ApplicationException("AI has gone in an imvalid state");
                 }

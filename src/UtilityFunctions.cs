@@ -1,5 +1,7 @@
 using System;
+using MyGame;
 using SwinGameSDK;
+using System.Collections.Generic;
 using static SwinGameSDK.SwinGame;
 /// <summary>
 /// This includes a number of utility methods for
@@ -138,24 +140,31 @@ namespace MyGame
                     switch (grid.Item(row, col))
                     {
                         case TileView.Ship:
-                            draw = false;
+                            if (small)
+                                fillColor = SMALL_SHIP;
+                            else
+                                fillColor = LARGE_SHIP;
+                            break;
                         //If small Then fillColor = _SMALL_SHIP Else fillColor = _LARGE_SHIP
                         case TileView.Miss:
                             if (small)
                                 fillColor = SMALL_MISS;
                             else
                                 fillColor = LARGE_MISS;
+                            break;
                         case TileView.Hit:
                             if (small)
                                 fillColor = SMALL_HIT;
                             else
                                 fillColor = LARGE_HIT;
+                            break;
                         case TileView.Sea:
-                        case TileView.Ship:
+                        
                             if (small)
                                 fillColor = SMALL_SEA;
                             else
                                 draw = false;
+                            break;
                     }
 
                     if (draw)
@@ -246,13 +255,17 @@ namespace MyGame
                 case GameState.AlteringSettings:
                 case GameState.ViewingHighScores:
                     SwinGame.DrawBitmap(GameImage("Menu"), 0, 0);
+                    break;
                 case GameState.Discovering:
                 case GameState.EndingGame:
                     SwinGame.DrawBitmap(GameImage("Discovery"), 0, 0);
+                    break;
                 case GameState.Deploying:
                     SwinGame.DrawBitmap(GameImage("Deploy"), 0, 0);
+                    break;
                 default:
                     SwinGame.ClearScreen();
+                    break;
             }
 
             SwinGame.DrawFramerate(675, 585);

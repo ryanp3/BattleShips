@@ -1,5 +1,4 @@
 using SwinGameSDK;
-using System;
 
 /// <summary>
 /// The menu controller handles the drawing and user interactions
@@ -255,10 +254,13 @@ namespace MyGame
             {
                 case MAIN_MENU:
                     PerformMainMenuAction(button);
+                    break;
                 case SETUP_MENU:
                     PerformSetupMenuAction(button);
+                    break;
                 case GAME_MENU:
                     PerformGameMenuAction(button);
+                    break;
             }
         }
 
@@ -272,12 +274,16 @@ namespace MyGame
             {
                 case MAIN_MENU_PLAY_BUTTON:
                     StartGame();
+                    break;
                 case MAIN_MENU_SETUP_BUTTON:
                     AddNewState(GameState.AlteringSettings);
+                    break;
                 case MAIN_MENU_TOP_SCORES_BUTTON:
                     AddNewState(GameState.ViewingHighScores);
+                    break;
                 case MAIN_MENU_QUIT_BUTTON:
                     EndCurrentState();
+                    break;
             }
         }
 
@@ -290,11 +296,14 @@ namespace MyGame
             switch (button)
             {
                 case SETUP_MENU_EASY_BUTTON:
-                    SetDifficulty(AIOption.Hard);
+                    GameController.SetDifficulty(AIOption.Hard);
+                    break;
                 case SETUP_MENU_MEDIUM_BUTTON:
                     SetDifficulty(AIOption.Hard);
+                    break;
                 case SETUP_MENU_HARD_BUTTON:
                     SetDifficulty(AIOption.Hard);
+                    break;
             }
             //Always end state - handles exit button as well
             EndCurrentState();
@@ -310,13 +319,16 @@ namespace MyGame
             {
                 case GAME_MENU_RETURN_BUTTON:
                     EndCurrentState();
+                    break;
                 case GAME_MENU_SURRENDER_BUTTON:
                     EndCurrentState();
+                    break;
                     //end game menu
                     //end game
-                    EndCurrentState();
+                    
                 case GAME_MENU_QUIT_BUTTON:
                     AddNewState(GameState.Quitting);
+                    break;
             }
         }
     }

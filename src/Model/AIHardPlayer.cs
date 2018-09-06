@@ -174,10 +174,13 @@ namespace MyGame
             {
                 case ResultOfAttack.Miss:
                     _CurrentTarget = null;
+                    break;
                 case ResultOfAttack.Hit:
                     ProcessHit(row, col);
+                    break;
                 case ResultOfAttack.Destroyed:
                     ProcessDestroy(row, col, result.Ship);
+                    break;
                 case ResultOfAttack.ShotAlready:
                     throw new ApplicationException("Error in AI");
             }

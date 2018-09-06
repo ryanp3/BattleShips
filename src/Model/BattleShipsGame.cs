@@ -41,7 +41,7 @@ namespace MyGame
         /// <remarks>This value will switch between the two players as they have their attacks</remarks>
         public Player Player
         {
-            get { return _players(_playerIndex); }
+            get { return _players[_playerIndex]; }
         }
 
         /// <summary>
@@ -51,13 +51,13 @@ namespace MyGame
         /// <param name="p"></param>
         public void AddDeployedPlayer(Player p)
         {
-            if (_players(0) == null)
+            if (_players[0] == null)
             {
-                _players(0) = p;
+                _players[0] = p;
             }
-            else if (_players(1) == null)
+            else if (_players[1] == null)
             {
-                _players(1) = p;
+                _players[1] = p;
                 CompleteDeployment();
             }
             else
