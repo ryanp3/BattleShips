@@ -87,8 +87,8 @@ public  class AIEasyPlayer : AIPlayer
     /// <param name="column">output the column for the next show</param>
     protected override void GenerateCoords(ref int row, ref int column)
     {
-        row = _random.Next(0, 11);
-        column = _random.Next(0, 11);
+        row = _random.Next(11);
+        column = _random.Next(11);
     }
 
     /// <summary>
@@ -100,18 +100,6 @@ public  class AIEasyPlayer : AIPlayer
     /// <param name="col">the column shot</param>
     protected override void ProcessShot(int row, int col, AttackResult result)
     {
-        /*if (result.Value == ResultOfAttack.Hit)
-        {
-            row = _random.Next(0, 11);
-            col = _random.Next(0, 11);
-
-        }
-        else if (result.Value == ResultOfAttack.ShotAlready)
-        {
-
-            throw new ApplicationException("Error in AI");
-
-        }*/
     }
 
     /// <summary>
@@ -133,7 +121,6 @@ public  class AIEasyPlayer : AIPlayer
             //generate coordinates for shot
             result = _game.Shoot(row, column);
             //take shot
-            ProcessShot(row, column, result);
         } while (result.Value != ResultOfAttack.Miss && result.Value != ResultOfAttack.GameOver && !SwinGame.WindowCloseRequested());
 
         return result;
