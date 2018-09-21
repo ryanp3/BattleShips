@@ -1,10 +1,6 @@
-
-using Microsoft.VisualBasic;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-//using System.Data;
-using System.Diagnostics;
 /// <summary>
 /// Player has its own _PlayerGrid, and can see an _EnemyGrid, it can also check if
 /// all ships are deployed and if all ships are detroyed. A Player can also attach.
@@ -102,7 +98,7 @@ public class Player : IEnumerable<Ship>
 	/// The number of shots the player has made
 	/// </summary>
 	/// <value>shots taken</value>
-	/// <returns>teh number of shots taken</returns>
+	/// <returns>the number of shots taken</returns>
 	public int Shots {
 		get { return _shots; }
 	}

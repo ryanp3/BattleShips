@@ -1,10 +1,4 @@
-
-using Microsoft.VisualBasic;
-using System;
-using System.Collections;
 using System.Collections.Generic;
-//using System.Data;
-using System.Diagnostics;
 using SwinGameSDK;
 
 public static class GameResources
@@ -177,16 +171,14 @@ public static class GameResources
 	{
 		const int ANI_X = 143;
 		const int ANI_Y = 134;
-		const int ANI_W = 546;
+		/*const int ANI_W = 546;
 		const int ANI_H = 327;
-		const int ANI_V_CELL_COUNT = 6;
+		const int ANI_V_CELL_COUNT = 6;*/
 		const int ANI_CELL_COUNT = 11;
 
 		Audio.PlaySoundEffect(_StartSound);
 		SwinGame.Delay(200);
-
-		int i = 0;
-		for (i = 0; i <= ANI_CELL_COUNT - 1; i++) {
+		for (int i = 0; i <= ANI_CELL_COUNT - 1; i++) {
 			SwinGame.DrawBitmap(_Background, 0, 0);
 			SwinGame.DrawBitmap(_Animation, ANI_X, ANI_Y);
 			SwinGame.Delay(20);
