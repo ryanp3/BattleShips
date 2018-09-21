@@ -1,4 +1,9 @@
+using Microsoft.VisualBasic;
+using System;
+using System.Collections;
 using System.Collections.Generic;
+//using System.Data;
+using System.Diagnostics;
 using SwinGameSDK;
 /// <summary>
 /// This includes a number of utility methods for
@@ -273,7 +278,7 @@ static class UtilityFunctions
 		s.X = FIELD_LEFT + col * (CELL_WIDTH + CELL_GAP);
 		s.Y = FIELD_TOP + row * (CELL_HEIGHT + CELL_GAP);
 
-		s.StartAnimation(image);
+		s.StartAnimation("splash");
 		_Animations.Add(s);
 	}
 
