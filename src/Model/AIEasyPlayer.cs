@@ -87,8 +87,8 @@ public  class AIEasyPlayer : AIPlayer
     /// <param name="column">output the column for the next show</param>
     protected override void GenerateCoords(ref int row, ref int column)
     {
-        row = _random.Next(11);
-        column = _random.Next(11);
+        row = _random.Next(10);
+        column = _random.Next(10);
     }
 
     /// <summary>
