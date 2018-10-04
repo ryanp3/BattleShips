@@ -223,12 +223,12 @@ public static class GameResources
 		SwinGame.Delay(500);
 		SwinGame.ClearScreen();
 		SwinGame.RefreshScreen();
-        /* SwinGame.FreeFont(_LoadingFont);
+        SwinGame.FreeFont(_LoadingFont);
 		SwinGame.FreeBitmap(_Background);
 		SwinGame.FreeBitmap(_Animation);
 		SwinGame.FreeBitmap(_LoaderEmpty);
 		SwinGame.FreeBitmap(_LoaderFull);
-		//Audio.FreeSoundEffect(_StartSound);*/
+		//Audio.FreeSoundEffect(_StartSound);
 		SwinGame.ChangeScreenSize(width, height);
 	}
 
