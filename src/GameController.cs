@@ -79,14 +79,12 @@ public static class GameController
 				break;
 
 			default:
-                //_ai = new AIHardPlayer(_theGame);
                 _ai = new AIEasyPlayer(_theGame);
 				break;
 		}
 
 		_human = new Player(_theGame);
 
-		//AddHandler _human.PlayerGrid.Changed, AddressOf GridChanged
 		_ai.PlayerGrid.Changed += GridChanged;
 		_theGame.AttackCompleted += AttackCompleted;
 
@@ -99,7 +97,6 @@ public static class GameController
 
 	private static void EndGame()
 	{
-		//RemoveHandler _human.PlayerGrid.Changed, AddressOf GridChanged
 		_ai.PlayerGrid.Changed -= GridChanged;
 		_theGame.AttackCompleted -= AttackCompleted;
 	}
