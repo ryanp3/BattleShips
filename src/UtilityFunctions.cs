@@ -173,6 +173,14 @@ static class UtilityFunctions
                     if (!small)
                     {
                         SwinGame.DrawRectangle(OUTLINE_COLOR, colLeft, rowTop, cellWidth, cellHeight);
+                        if (row == 0)
+                        {
+                            SwinGame.DrawText(col.ToString(), Color.Yellow, colLeft + cellWidth - cellGap - 7, rowTop + 2);
+                        }
+                        if (col == 0)
+                        {
+                            SwinGame.DrawText(row.ToString(), Color.Yellow, colLeft + 2, rowTop + cellHeight - cellGap - 7);
+                        }
                     }
                 }
             }
