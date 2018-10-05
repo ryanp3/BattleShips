@@ -7,7 +7,9 @@ public static class GameResources
 	private static void LoadFonts()
 	{
 		NewFont("ArialLarge", "arial.ttf", 80);
-		NewFont("Courier", "cour.ttf", 14);
+        NewFont("Heading", "ffaccess.ttf", 24);
+        NewFont("CourierLarge", "cour.ttf", 18);
+        NewFont("Courier", "cour.ttf", 14);
 		NewFont("CourierSmall", "cour.ttf", 8);
 		NewFont("Menu", "ffaccess.ttf", 8);
 	}
@@ -18,6 +20,10 @@ public static class GameResources
 		NewImage("Menu", "main_page.jpg");
 		NewImage("Discovery", "discover.jpg");
 		NewImage("Deploy", "deploy.jpg");
+        NewImage("HighScore", "highscore.jpg");
+
+        //HighScores
+        NewImage("BackButton", "back_button.png");
 
 		//Deployment
 		NewImage("LeftRightButton", "deploy_dir_button_horiz.png");
